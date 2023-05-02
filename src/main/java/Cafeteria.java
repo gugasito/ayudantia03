@@ -44,20 +44,21 @@ public class Cafeteria {
         this.rs = rs;
     }
 
-    public void agregarcafe(Cafe newcafe) {
+    public void agregarCafe(Cafe newcafe) {
         getListaCafes().add(newcafe);
     }
 
-    public void vendercafe(String nombrecafe) {
-        this.getListaCafes().remove(buscarcafe(nombrecafe));
+    public void eliminarCafe(int i) {
+        this.getListaCafes().remove(i);
     }
 
-    public int buscarcafe(String cafe) {
+
+    public int buscarcafe(Cafe.Tamaño tamaño) {
         int posi = 0;
         for (int i = 0; i < getListaCafes().size(); i++) {
-            if (getListaCafes().equals(cafe)) {
+            if (getListaCafes().get(i).getTamaño().equals(tamaño)) {
                 posi = i;
-                break;
+                System.out.println("Cafe " + tamaño + " en la posicion: " + posi);
             }
         }
         return posi;

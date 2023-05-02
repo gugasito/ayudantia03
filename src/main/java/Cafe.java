@@ -1,7 +1,14 @@
 public class Cafe {
+
+    public enum Tamaño {
+        Pequeño,
+        Mediano,
+        Grande
+    }
+
     private int gramos;
     private float ml;
-    private String tamaño;
+    private Tamaño tamaño;
 
     public int getGramos() {
         return gramos;
@@ -19,25 +26,21 @@ public class Cafe {
         this.ml = ml;
     }
 
-    public String getTamaño() {
+    public Tamaño getTamaño() {
         return tamaño;
     }
 
-    public void setTamaño(String tamaño) {
+    public void setTamaño(Tamaño tamaño) {
         this.tamaño = tamaño;
     }
 
-    public Cafe(int gramos, float ml, String tamaño) {
+    public Cafe(int gramos, float ml, Tamaño tamaño) {
         this.gramos = gramos;
         this.ml = ml;
         this.tamaño = tamaño;
     }
 
     public String toString() {
-        String msj = "";
-        for (int i = 0; i < 3; i++) {
-            msj += getGramos() + "-" + getMl() + "-" + getTamaño();
-        }
-        return msj;
+        return getGramos() + " gramos" + "|" + getMl() + " litros" + "|" + "Tamaño: " + getTamaño();
     }
 }
