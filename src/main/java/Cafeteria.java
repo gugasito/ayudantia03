@@ -55,13 +55,15 @@ public class Cafeteria {
 
     public int buscarcafe(Cafe.Tamaño tamaño) {
         int posi = 0;
+        int contador = 0;
         for (int i = 0; i < getListaCafes().size(); i++) {
             if (getListaCafes().get(i).getTamaño().equals(tamaño)) {
                 posi = i;
+                contador++;
                 System.out.println("Cafe " + tamaño + " en la posicion: " + posi);
             }
         }
-        return posi;
+        return contador;
     }
 }
 
