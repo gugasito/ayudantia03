@@ -4,7 +4,8 @@ public class Cafeteria {
     private String nombre;
     private String direccion;
     private String rs;
-    private ArrayList<Cafe> listaCafes = new ArrayList<Cafe>();
+    private ArrayList<Cafe> listaCafes = new ArrayList<>();
+    private ArrayList<Rosquilla> listaDonas = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
@@ -38,22 +39,29 @@ public class Cafeteria {
         this.listaCafes = listaCafes;
     }
 
+    public ArrayList<Rosquilla> getListaDonas() {
+        return listaDonas;
+    }
+
+    public void setListaDonas(ArrayList<Rosquilla> listaDonas) {
+        this.listaDonas = listaDonas;
+    }
+
     public Cafeteria(String nombre, String direccion, String rs) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.rs = rs;
     }
 
-    public void agregarCafe(Cafe newcafe) {
-        getListaCafes().add(newcafe);
+    public void agregarCafe(Cafe newCafe) {
+        getListaCafes().add(newCafe);
     }
 
-    public void eliminarCafe(int i) {
-        this.getListaCafes().remove(i);
+    public void eliminarCafe(int posi) {
+        this.getListaCafes().remove(posi);
     }
 
-
-    public int buscarcafe(Cafe.Tamaño tamaño) {
+    public int buscarCafe(Cafe.Tamaño tamaño) {
         int posi = 0;
         int contador = 0;
         for (int i = 0; i < getListaCafes().size(); i++) {
@@ -64,6 +72,14 @@ public class Cafeteria {
             }
         }
         return contador;
+    }
+
+    public void agregarDona(Rosquilla newDona) {
+        getListaDonas().add(newDona);
+    }
+
+    public void eliminarDona(int posi) {
+        this.getListaDonas().remove(posi);
     }
 }
 

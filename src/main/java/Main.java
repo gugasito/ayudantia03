@@ -9,9 +9,14 @@ public class Main {
         cafeteria1.agregarCafe(cafe3);
         cafeteria1.agregarCafe(cafe2);
         mostrarCafes(cafeteria1);
-        cafeteria1.buscarcafe(Cafe.Tamaño.valueOf("Grande"));
+        cafeteria1.buscarCafe(Cafe.Tamaño.valueOf("Grande"));
         cafeteria1.eliminarCafe(1);
         mostrarCafes(cafeteria1);
+        Rosquilla rosquilla1 = crearDona(Rosquilla.Tamaño.Grande, Rosquilla.Sabor.Anis, Rosquilla.Glaseado.Lisas);
+        cafeteria1.agregarDona(rosquilla1);
+        mostrarDonas(cafeteria1);
+        cafeteria1.eliminarDona(0);
+        mostrarDonas(cafeteria1);
     }
 
     public static void mostrarCafes(Cafeteria cafeteria1) {
@@ -29,5 +34,13 @@ public class Main {
         return cafe1;
     }
 
+    public static Rosquilla crearDona(Rosquilla.Tamaño tamaño, Rosquilla.Sabor sabor, Rosquilla.Glaseado glaseado) {
+        Rosquilla rosquilla1 = new Rosquilla(sabor, tamaño, glaseado);
+        System.out.println("Rosquilla: " + rosquilla1 + " creada correctamente");
+        return rosquilla1;
+    }
 
+    public static void mostrarDonas(Cafeteria cafeteria1) {
+        System.out.println(cafeteria1.getListaDonas());
+    }
 }

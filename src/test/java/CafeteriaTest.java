@@ -34,6 +34,23 @@ class CafeteriaTest {
         cafeteria1.agregarCafe(cafe3);
         cafeteria1.agregarCafe(cafe4);
         cafeteria1.agregarCafe(cafe5);
-        assertEquals(5, cafeteria1.buscarcafe(Cafe.Tamaño.Grande));
+        assertEquals(5, cafeteria1.buscarCafe(Cafe.Tamaño.Grande));
+    }
+
+    @Test
+    void agregarDona() {
+        Cafeteria cafeteria1 = new Cafeteria("aaaa", "aaaaa", "aaaa");
+        Rosquilla dona1 = new Rosquilla(Rosquilla.Sabor.Anis, Rosquilla.Tamaño.Grande, Rosquilla.Glaseado.Lisas);
+        cafeteria1.agregarDona(dona1);
+        assertEquals(1, cafeteria1.getListaDonas().size());
+    }
+
+    @Test
+    void eliminarDona() {
+        Cafeteria cafeteria1 = new Cafeteria("aaaa", "aaaaa", "aaaa");
+        Rosquilla dona1 = new Rosquilla(Rosquilla.Sabor.Anis, Rosquilla.Tamaño.Grande, Rosquilla.Glaseado.Lisas);
+        cafeteria1.agregarDona(dona1);
+        cafeteria1.eliminarDona(0);
+        assertEquals(0, cafeteria1.getListaDonas().size());
     }
 }
